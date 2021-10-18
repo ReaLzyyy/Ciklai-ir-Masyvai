@@ -3,36 +3,34 @@
 console.log("1.");
 const wallet = [];
 const money = [];
-for (let i = 1; i <= 10; i++) {
-    let a = Math.floor(Math.random() * 21 + 10);
-    let b = Math.floor(Math.random() * 11);
-    wallet.unshift(a);
-    money.unshift(b);
+const wl = Math.floor(Math.random() * 21 + 10);
+for (let i = 0; i < wl; i++) {
+    wallet[i] = Math.floor(Math.random() * 11)
 }
-console.log(wallet, money);
+console.log(wallet);
 // 2.Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio reikšmių (pinigų esančių piniginėje) sumą;
 console.log("\n2.");
 let sum = 0;
-for (let i = 0; i < money.length; i++) {
-    sum += money[i];
+for (let i = 0; i < wallet.length; i++) {
+    sum += wallet[i];
 }
 console.log(sum);
 // 3.Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
 console.log("\n3.");
 let sum1 = 0;
-for (let i = 0; i < money.length; i++) {
-    if (money[i] > 2) {
-        sum1 += money[i];
+for (let i = 0; i < wallet.length; i++) {
+    if (wallet[i] > 2) {
+        sum1 += wallet[i];
     }
 }
 console.log(sum1);
 // 4.Išleisti visus metalinius pinigus (reikšmes, kurios yra mažesnės arba lygios 2 padaryti lygias 0) iš 1 uždavinio;
 console.log("\n4.");
-const map1 = money.map((x) => (x <= 2 ? 0 : x));
+const map1 = wallet.map((x) => (x <= 2 ? 0 : x));
 console.log(map1);
 // 5.Surasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti kiek tokių didžiausių reikšmių masyve yra;
 console.log("\n5.");
-const twoArrays = wallet.concat(money);
+const twoArrays = wallet.concat(wallet);
 max = Math.max(...twoArrays);
 n = 0;
 for (let i = 0; i < twoArrays.length; i++) {
@@ -150,5 +148,5 @@ console.log(lucky);
 // ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
 console.log("\n18.");
 bigArray.push(["šuo", "katė", "automobilis", "namas", "kiemas"]);
-bigArray[5].sort((a,b) => a.length - b.length);
+bigArray[5].sort((a, b) => a.length - b.length);
 console.log(bigArray[5]);
